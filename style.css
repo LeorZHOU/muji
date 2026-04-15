@@ -399,4 +399,82 @@ body {
     background: #d8d5d5;;
   }
 
+.cute-btn {
+  display: inline-block;
+  padding: 14px 34px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
 
+  /* 柔和粉色漸層 */
+  background: linear-gradient(135deg, #ffb6b9, #fcd5ce) !important;
+  
+  border-radius: 50px;
+  box-shadow: 0 8px 18px rgba(255, 182, 185, 0.4);
+  
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* hover 整體浮起來 */
+.cute-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 182, 185, 0.5);
+}
+
+/* 點擊 */
+.cute-btn:active {
+  transform: scale(0.96);
+}
+
+/* ✨ 小裝飾（預設） */
+.cute-btn::after {
+  content: "✨";
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  font-size: 14px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+/* 🐾 hover 變肉球 + 跳動 */
+.cute-btn:hover::after {
+  content: "🐾";
+  animation: pawBounce 0.6s infinite alternate;
+}
+
+/* 肉球跳動動畫 */
+@keyframes pawBounce {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-6px) rotate(-10deg);
+  }
+}
+
+/* 柔光掃過效果（高級感） */
+.cute-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,0.3);
+  transform: skewX(-20deg);
+}
+
+/* hover 時光滑過 */
+.cute-btn:hover::before {
+  animation: shine 0.8s;
+}
+@keyframes shine {
+  100% {
+    left: 130%;
+  }
+}
